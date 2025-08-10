@@ -1,0 +1,247 @@
+Command: ipconfig
+
+Output:
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   IPv4 Address. . . . . . . . . . . : 10.171.205.40
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 10.171.205.203
+
+Description:
+The ipconfig command displays the current TCP/IP network configuration for all network adapters. It is used to quickly check a device's IP address, subnet mask, and default gateway.
+
+Command: ipconfig /all
+
+Output:
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : dev-satyamjha
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : MediaTek Wi-Fi 6E MT7922 (RZ616) 160MHz PCIe Adapter
+   Physical Address. . . . . . . . . : 00-41-0E-98-5E-E3
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   IPv4 Address. . . . . . . . . . . : 10.171.205.40(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : 10 August 2025 09:42:15 PM
+   Lease Expires . . . . . . . . . . : 10 August 2025 11:42:32 PM
+   Default Gateway . . . . . . . . . : 10.171.205.203
+   DHCP Server . . . . . . . . . . . : 10.171.205.203
+   DNS Servers . . . . . . . . . . . : 10.171.205.203
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Description:
+This command provides a detailed report of the network configuration for all adapters. It includes the host name, MAC address, DHCP information, and DNS server addresses.
+
+Command: nslookup
+
+Output:
+nslookup dev-satyamjha.is-a.dev
+Server:  UnKnown
+Address:  10.171.205.203
+
+Non-authoritative answer:
+Name:    dev-satyamjha.is-a.dev
+Addresses:  2606:4700:99e1:4cb7:69d9:c1c:44a5:7d9c
+          104.18.4.103
+          104.18.5.103
+
+Description:
+The nslookup (Name Server Lookup) command queries DNS servers to get information about a domain name, such as its IP addresses and other DNS records.
+
+Command: ping
+
+Output:
+Pinging dev-satyamjha.is-a.dev [104.18.5.103] with 32 bytes of data:
+Reply from 104.18.5.103: bytes=32 time=160ms TTL=50
+Reply from 104.18.5.103: bytes=32 time=69ms TTL=50
+Reply from 104.18.5.103: bytes=32 time=85ms TTL=50
+Reply from 104.18.5.103: bytes=32 time=79ms TTL=50
+
+Ping statistics for 104.18.5.103:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 69ms, Maximum = 160ms, Average = 98ms
+
+Description:
+The ping command is a basic utility that tests the connectivity between two devices on a network. It sends packets to a target and measures the time it takes to receive a response.
+
+Command: tracert
+
+Output:
+tracert dev-satyamjha.is-a.dev
+
+Tracing route to dev-satyamjha.is-a.dev [104.18.5.103]
+over a maximum of 30 hops:
+
+  1    70 ms     5 ms     5 ms  10.171.205.203
+  2    53 ms     6 ms     6 ms  192.0.0.1
+  3     *        *        *     Request timed out.
+  4     *        *        *     Request timed out.
+  5     *        *        *     Request timed out.
+
+Description:
+The tracert (Trace Route) command maps the path of a data packet from its source to a destination. It lists each router, or "hop," along the way and the time taken for the packet to reach it.
+
+Command: arp -a
+
+Output:
+Interface: 10.171.205.40 --- 0xa
+  Internet Address      Physical Address      Type
+  10.171.205.203        86-6d-57-db-f4-48     dynamic
+  10.171.205.255        ff-ff-ff-ff-ff-ff     static
+  224.0.0.22            01-00-5e-00-00-16     static
+
+Description:
+This command displays the ARP (Address Resolution Protocol) cache, which is a table that maps the IP addresses of devices on your local network to their physical MAC addresses.
+
+Command: route print
+
+Output: IPv4 Route Table
+Active Routes:
+Network Destination        Netmask          Gateway       Interface    Metric
+          0.0.0.0          0.0.0.0   10.171.205.203    10.171.205.40     50
+     10.171.205.0    255.255.255.0         On-link     10.171.205.40    306
+    10.171.205.40  255.255.255.255         On-link     10.171.205.40    306
+
+Description:
+The route print command displays the IP routing table. This table shows all the network routes that your computer uses to send data packets to different destinations.
+
+Command: hostname
+
+Output: dev-satyamjha
+
+Description:
+This command displays the current hostname of the computer. The hostname is a unique label used to identify the machine on a network.
+
+Command: systeminfo
+
+Output:
+Host Name:                     dev-satyamjha
+OS Name:                       Microsoft Windows 11 Home Single Language
+OS Version:                    10.0.26100 N/A Build 26100
+OS Manufacturer:               Microsoft Corporation
+System Manufacturer:           HP
+System Model:                  HP ProBook 445 14 inch G10 Notebook PC
+System Type:                   x64-based PC
+
+Description:
+The systeminfo command provides a detailed summary of the computer's hardware and software configuration, including the OS version, manufacturer, and system type.
+
+Command: tasklist
+
+Output:
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0        136 K
+
+Description:
+This command lists all the processes currently running on the computer. It's the command-line equivalent of the Task Manager's "Processes" tab.
+
+Command: taskkill
+
+Output:
+taskkill /PID 14060
+SUCCESS: Sent termination signal to the process with PID 14060.
+
+Description:
+The taskkill command is used to terminate a running process by its Process ID (PID) or image name.
+
+Command: getmac
+
+Output:
+Physical Address    Transport Name
+=================== ==========================================================
+34-23-14-31-32-43   Media disconnected
+00-41-0E-98-5E-E3   \Device\Tcpip_{916BE1D3-8EFC-440D-BE6A-6CD70CDE303B}
+
+Description:
+The getmac command retrieves the MAC address for all network adapters on the computer, which is a unique hardware identifier.
+
+Command: pathping
+
+Output:
+pathping google.com
+
+Tracing route to google.com [142.250.71.110]
+over a maximum of 30 hops:
+  0  dev-satyamjha [10.171.205.40]
+  1  10.171.205.203
+  2  192.0.0.1
+  3     *        *        *
+
+Computing statistics for 50 seconds...
+            Source to Here   This Node/Link
+Hop  RTT    Lost/Sent = Pct  Lost/Sent = Pct  Address
+  0                                           dev-satyamjha [10.171.205.40]
+                                0/ 100 =  0%   |
+  1   17ms     0/ 100 =  0%     0/ 100 =  0%  10.171.205.203
+
+Description:
+The pathping command is a powerful tool that combines the features of ping and tracert. It measures both latency and packet loss at each hop along the network path to a destination.
+
+Command: nbtstat
+
+Description:
+The nbtstat command provides statistics and information about NetBIOS over TCP/IP connections. It is primarily used for troubleshooting name resolution in older network environments.
+
+Command: netsh
+
+Description:
+netsh (Network Shell) is a comprehensive command-line utility for configuring, displaying, and managing various network settings. It works within a hierarchical structure to manage components like the firewall, interfaces, and wireless settings.
+
+Command: ipconfig /flushdns
+
+Output:
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
+
+Description:
+This command clears the DNS client resolver cache, which forces the system to perform a new DNS lookup for future requests. It is useful for troubleshooting issues with outdated DNS records.
+
+Command: arp -g
+
+Output:
+Interface: 10.171.205.40 --- 0xa
+  Internet Address      Physical Address      Type
+  10.171.205.203        86-6d-57-db-f4-48     dynamic
+  10.171.205.255        ff-ff-ff-ff-ff-ff     static
+  224.0.0.22            01-00-5e-00-00-16     static
+
+Description:
+This command is a synonym for arp -a and also displays the computer's ARP cache.
+
+Command: getmac /v
+
+Output:
+Connection Name Network Adapter Physical Address    Transport Name
+=============== =============== =================== ==========================================================
+Ethernet        Realtek PCIe Gb 34-23-14-31-32-43   Media disconnected
+Wi-Fi           MediaTek Wi-Fi  00-41-0E-98-5E-E3   \Device\Tcpip_{916BE1D3-8EFC-440D-BE6A-6CD70CDE303B}
+
+Description:
+The getmac /v command provides a more verbose output, displaying the MAC address along with the connection name and network adapter name for each interface.
+
+Command: ver
+
+Output: Microsoft Windows [Version 10.0.26100.4770]
+
+Description:
+This command simply displays the current version of the Windows operating system.
+
+Command: systeminfo | findstr "Network Card"
+
+Output: Network Card(s):               2 NIC(s) Installed.
+
+Description:
+This command uses a combination of systeminfo and the findstr filter to specifically display the number of network cards installed on the system.
