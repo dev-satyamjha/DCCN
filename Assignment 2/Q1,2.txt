@@ -1,4 +1,15 @@
-Q1)"Ping” is a tool used to determine if a server is responding and to estimate the round trip-
+Q1) To familiarize with the Lab Network Topology, Locating different interfaces, routers and
+switches. Studying different pools of IP addresses.
+
+Ans> I explored lab’s network setup and identified the routers, switches, and interfaces connected in the network. I also checked the IP addresses assigned to different devices and networks. I also got to know about types and ranges  of Private Ip Address Pool and Public Ip Address Pool.
+
+Q2)To learn and observe the usage of different networking commands e.g. PING, TRACEROUTE.
+Learning remote login using telnet session. Measuring typical average delays between
+different locations of the network.
+
+Ans> I started by using the PING command to check if a host was reachable and to measure the average round-trip time. Next, I used TRACEROUTE to trace the path packets took from my system to a remote server. This helped me understand the number of hops and identify any delays or bottlenecks in the network path. I also practiced remote login using the Telnet command in the terminal which connected me to a server. It helped me understand how Telnet opens a session to control a remote machine.
+
+Q3)"Ping” is a tool used to determine if a server is responding and to estimate the round trip-
 time of a message sent to that server. Use the ping command for the following URLs and
 record the success or failure statistics along with the average round trip time.
 a) google.com
@@ -23,7 +34,7 @@ Reply from 192.124.249.170: bytes=32 time=39ms TTL=50
 Reply from 192.124.249.170: bytes=32 time=35ms TTL=50
 Reply from 192.124.249.170: bytes=32 time=49ms TTL=50
 
-Q2)Trace the route that is taken when you try to access:
+Q4)Trace the route that is taken when you try to access:
 a) google.com
 b) facebook.com
 c) bitmesra.ac.in
